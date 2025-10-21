@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>InfinichainX (IFX) — Modular DeFi en World Chain</title>
-  <meta name="description" content="InfinichainX — Ecosistema modular DeFi en World Chain. Escalabilidad infinita, impacto viral e infraestructura institucional." />
+  <title>InfinichainX (IFX) — Modular DApp · Worldchain</title>
+  <meta name="description" content="InfinichainX — Demo profesional de DApp en World Chain. Simulación AMM, Lending, Oráculo y reputación." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/logo-hood.png" />
 </head>
 <body>
+  <!-- STARFIELD CANVAS -->
   <canvas id="starfield" aria-hidden="true"></canvas>
   <div class="bg-image" aria-hidden="true"></div>
 
@@ -18,15 +19,14 @@
         <img src="assets/logo-hood.png" alt="InfinichainX logo" class="logo" />
         <div>
           <h1>InfinichainX <span class="muted">IFX</span></h1>
-          <p class="tagline">Modular Development Collective · Building on World Chain</p>
+          <p class="tagline">Modular DApp · Building on World Chain</p>
         </div>
       </div>
 
       <nav class="nav">
         <a href="#ecosystem">Ecosistema</a>
-        <a href="#tech">Tecnología</a>
         <a href="#simulator">Simulador</a>
-        <a class="cta" href="#explore">Explorar</a>
+        <a href="#docs">Docs</a>
         <div class="worldcoin" title="Worldcoin">
           <img src="assets/worldcoin.png" alt="Worldcoin logo" />
         </div>
@@ -40,50 +40,53 @@
         <div class="hero-copy">
           <h2 class="neon">InfinichainX</h2>
           <h3 class="sub">Building on World Chain</h3>
-          <p class="lead">A modular ecosystem of interoperable decentralized applications. Scalable architecture. Viral protocols. Institutional-grade infrastructure.</p>
+          <p class="lead">Ecosistema modular de DApps interoperables. Infraestructura institucional preparada para integración con Worldchain y Worldcoin.</p>
 
           <div class="hero-cta">
-            <a class="btn primary" id="explore-btn" href="#ecosystem">Explore Ecosystem</a>
-            <a class="btn ghost" href="#docs">Read Documentation</a>
+            <a class="btn primary" href="#simulator">Probar Demo</a>
+            <a class="btn ghost" href="#docs">Leer Documentación</a>
           </div>
+
+          <ul class="values">
+            <li><strong>Arquitectura modular</strong> para integración y escalabilidad.</li>
+            <li><strong>Oráculos y precios</strong> simulados para prototipado realista.</li>
+            <li><strong>UX profesional</strong> pensado para demo institucional.</li>
+          </ul>
         </div>
 
         <aside class="hero-panel">
           <div class="panel-header">
-            <span class="chip">InfinichainX Oracle</span>
-            <h4>Simulación en vivo</h4>
-            <p class="muted">Demo local con datos simulados y starfield activo.</p>
+            <span class="chip">Oracle · Live (simulado)</span>
+            <h4 id="oracle-price">IFX · USD: —</h4>
+            <p class="muted">Precio simulado por oráculo. Actualizaciones contínuas.</p>
           </div>
 
           <div class="wallet-sim">
             <div class="wallet-row">
               <div>
                 <small>Wallet (simulado)</small>
-                <div id="wallet-address" class="mono">0xSIMULATED...IFX</div>
+                <div id="wallet-address" class="mono">0xSIM-IFX-DEMO</div>
               </div>
-              <button id="resetWallet" class="btn small">Reset</button>
+              <button id="reset-wallet" class="btn small">Reset</button>
             </div>
-
             <div class="balances">
-              <div class="balance" data-token="IFX">
+              <div class="balance">
                 <div class="token">IFX</div>
-                <div class="amount mono">10000</div>
+                <div id="bal-ifx" class="amount mono">—</div>
               </div>
-              <div class="balance" data-token="WORLD">
+              <div class="balance">
                 <div class="token">WORLD</div>
-                <div class="amount mono">5000</div>
+                <div id="bal-world" class="amount mono">—</div>
               </div>
-              <div class="balance" data-token="USD">
+              <div class="balance">
                 <div class="token">USD</div>
-                <div class="amount mono">20000</div>
+                <div id="bal-usd" class="amount mono">—</div>
               </div>
             </div>
           </div>
 
-          <div class="panel-console" id="console"></div>
-
           <div class="panel-footer">
-            <small class="muted">Demo local — no requiere blockchain real. Datos estimados para prototipado.</small>
+            <small class="muted">Demo local — transacciones simuladas con confirmación visual.</small>
           </div>
         </aside>
       </div>
@@ -92,25 +95,129 @@
     <section id="ecosystem" class="section container">
       <h3>Apps en desarrollo</h3>
       <div class="cards-grid">
-        <article class="card"><h4>Color Swap</h4><p>Intercambio descentralizado con privacidad ZK y AMM innovador.</p></article>
-        <article class="card"><h4>Lending Protocol</h4><p>Préstamos sobrecolateralizados y cross-chain.</p></article>
-        <article class="card"><h4>Financial Mini-Games</h4><p>Gamified DeFi para educación y yield.</p></article>
-        <article class="card"><h4>Reputation System</h4><p>Identidad on-chain y onboarding viral.</p></article>
+        <article class="card">
+          <h4>Color Swap (AMM)</h4>
+          <p>AMM con cálculo de slippage, fees y simulación de impacto en precio.</p>
+        </article>
+        <article class="card">
+          <h4>Lending Protocol</h4>
+          <p>Depósito de colateral, LTV, interés acumulado y simulación de liquidación.</p>
+        </article>
+        <article class="card">
+          <h4>Reputation & Onboarding</h4>
+          <p>Sistema on-chain-simulado para reputación, onboarding viral y gobernanza.</p>
+        </article>
+        <article class="card">
+          <h4>Oracle & Price Feed</h4>
+          <p>Oráculo simulado con random-walk y historial para charting básico.</p>
+        </article>
       </div>
     </section>
 
-    <section id="explore" class="section callout">
-      <div class="container">
-        <h3>Únete al Collective</h3>
-        <p>Colabora, audita y construye con InfinichainX. Programa de grants y documentación pronto.</p>
-        <a class="btn primary" href="#docs">Read Documentation</a>
+    <section id="simulator" class="section container">
+      <h3>Simulador · DApp demo</h3>
+
+      <div class="sim-grid">
+
+        <!-- SWAP -->
+        <div class="sim-card">
+          <h4>Swap · Color Swap (AMM)</h4>
+          <div class="form-row">
+            <label>From</label>
+            <select id="from-token">
+              <option value="IFX">IFX</option>
+              <option value="WORLD">WORLD</option>
+            </select>
+            <input id="from-amount" type="number" min="0" value="100" />
+          </div>
+          <div class="form-row">
+            <label>To</label>
+            <select id="to-token">
+              <option value="WORLD">WORLD</option>
+              <option value="IFX">IFX</option>
+            </select>
+            <div id="to-amount" class="readonly mono">—</div>
+          </div>
+          <div class="sim-info">
+            <div>Precio estimado: <span id="est-price" class="mono">—</span></div>
+            <div>Impacto: <span id="price-impact" class="mono">—</span></div>
+            <div>Fee: <span id="fee" class="mono">—</span></div>
+          </div>
+          <div class="sim-actions">
+            <button id="simulate-swap" class="btn">Estimar</button>
+            <button id="execute-swap" class="btn primary">Ejecutar (simulado)</button>
+          </div>
+          <div id="swap-log" class="log mono"></div>
+        </div>
+
+        <!-- LENDING -->
+        <div class="sim-card">
+          <h4>Lending · Préstamos</h4>
+          <div class="form-row">
+            <label>Collateral (IFX)</label>
+            <input id="lend-collateral" type="number" min="0" value="500" />
+          </div>
+          <div class="form-row">
+            <label>LTV target</label>
+            <input id="lend-ltv" type="range" min="10" max="90" value="75" />
+            <div id="lend-ltv-val">75%</div>
+          </div>
+          <div class="sim-info">
+            <div>Collateral USD: <span id="collateral-usd" class="mono">—</span></div>
+            <div>Max borrow: <span id="max-borrow" class="mono">—</span></div>
+            <div>Borrow APY: <span id="borrow-apy" class="mono">—</span></div>
+          </div>
+          <div class="sim-actions">
+            <button id="simulate-lending" class="btn">Estimar</button>
+            <button id="execute-lend" class="btn primary">Depositar (simulado)</button>
+          </div>
+          <div id="lend-log" class="log mono"></div>
+        </div>
+
+        <!-- ORACLE / PRICE HISTORY -->
+        <div class="sim-card">
+          <h4>Oracle · Price feed</h4>
+          <div class="oracle-chart mono" id="price-spark">Historial: —</div>
+          <div class="sim-info">
+            <div>Último cambio: <span id="oracle-delta" class="mono">—</span></div>
+            <div>Volatilidad simulada: <span id="oracle-vol" class="mono">—</span></div>
+          </div>
+          <div class="sim-actions">
+            <button id="pause-oracle" class="btn">Pausar</button>
+            <button id="reset-oracle" class="btn">Reset</button>
+          </div>
+        </div>
+
+        <!-- REPUTATION / HISTORY -->
+        <div class="sim-card">
+          <h4>Reputation · Activity</h4>
+          <div class="rep-meter">
+            <div class="rep-score" id="rep-score">—</div>
+            <div class="rep-bar">
+              <div id="rep-fill" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="rep-actions">
+            <button data-action="swap" class="btn">Realizar Swap</button>
+            <button data-action="lend" class="btn">Proveer Liquidez</button>
+            <button data-action="gov" class="btn">Votar DAO</button>
+          </div>
+          <div id="rep-log" class="log mono"></div>
+        </div>
+
       </div>
+
+      <section class="txs container" style="margin-top:18px">
+        <h4>Historial de transacciones (simulado)</h4>
+        <div id="tx-log" class="log mono" style="max-height:220px"></div>
+      </section>
+
     </section>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <div>© <strong>InfinichainX</strong> · Built on World Chain</div>
-        <div class="muted">Infraestructura modular · Open collaboration</div>
+        <div>© <strong>InfinichainX</strong> · Demo · World Chain</div>
+        <div class="muted">Simulación local · No keys required</div>
       </div>
     </footer>
   </main>
