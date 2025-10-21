@@ -47,7 +47,11 @@ main, header, footer{position:relative; z-index:2;}
 .brand h1{margin:0;font-size:18px;color:#fff}
 .tagline{font-size:12px;color:var(--muted);margin:0}
 .nav a{color:var(--muted);margin-left:16px;text-decoration:none;font-size:14px}
-.worldcoin img{width:36px;height:36px;margin-left:12px;filter:drop-shadow(0 6px 18px rgba(6,200,220,0.08));}
+.nav .cta{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--accent)}
+.btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--muted);cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#39c79a);color:#042018;border:none;box-shadow:0 10px 30px rgba(6,200,220,0.08)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+.btn.small{padding:6px 8px;font-size:13px}
 
 /* Hero */
 .hero{padding:42px 0}
@@ -56,10 +60,6 @@ main, header, footer{position:relative; z-index:2;}
 .sub{font-size:20px;color:#cfefff;margin:6px 0}
 .lead{color:var(--muted);font-size:15px}
 .hero-cta{margin:18px 0}
-.btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted);cursor:pointer;text-decoration:none;display:inline-block}
-.btn.primary{background:linear-gradient(90deg,var(--accent),#39c79a);color:#042018;border:none;box-shadow:0 10px 30px rgba(6,200,220,0.08)}
-.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-.btn.small{padding:6px 8px;font-size:13px}
 
 /* Hero panel */
 .hero-panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
@@ -69,6 +69,7 @@ main, header, footer{position:relative; z-index:2;}
 .balances{display:flex;gap:8px;margin-top:12px}
 .balance{background:var(--glass);padding:8px;border-radius:10px;min-width:96px;text-align:center}
 .balance .token{font-weight:700;color:#fff}
+.panel-footer{margin-top:12px;font-size:12px}
 
 /* Sections */
 .section{padding:36px 0}
