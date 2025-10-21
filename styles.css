@@ -1,100 +1,26 @@
-:root{
-  --bg:#02040a;
-  --card:#071026;
-  --accent:#05f3ff;
-  --muted:#9aa4b2;
-  --neon:#1de7ff;
-  --glass: rgba(255,255,255,0.03);
-  --max-width:1200px;
-  --radius:12px;
-  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-  color: #dfeffd;
+/* Panel de consola (eventos simulados) */
+.panel-console {
+  margin-top: 14px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 10px;
+  height: 140px;
+  overflow-y: auto;
+  font-size: 12px;
+  padding: 6px 8px;
+  font-family: "Roboto Mono", monospace;
+  color: #8ef6ff;
 }
-
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background: #02040a;
-  color:var(--muted);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.45;
-  position:relative;
-  overflow-x:hidden;
+.panel-console::-webkit-scrollbar {width: 5px;}
+.panel-console::-webkit-scrollbar-thumb {
+  background: rgba(29,231,255,0.25);
+  border-radius: 4px;
 }
-
-/* Canvas starfield (detrás de todo) */
-#starfield{
-  position:fixed;
-  inset:0;
-  z-index:0;
-  display:block;
-  background:transparent;
+.panel-line {
+  animation: fadeIn 0.4s ease;
+  opacity: 0.85;
 }
-
-/* Imagen de fondo semitransparente (pon aquí la imagen 1) */
-.bg-image {
-  position:fixed;
-  inset:0;
-  background-image: url('assets/bg.jpg');
-  background-size:cover;
-  background-position:center;
-  opacity:0.12;
-  z-index:1;
-  filter:blur(1px) saturate(0.9);
-}
-
-/* Contenido principal encima del canvas y bg */
-main, header, footer{position:relative; z-index:2}
-
-/* Header */
-.container{max-width:var(--max-width);margin:0 auto;padding:20px 28px;}
-.site-header{position:sticky;top:0;backdrop-filter:blur(6px);background:linear-gradient(90deg, rgba(2,6,23,0.45), rgba(3,10,22,0.25));border-bottom:1px solid rgba(255,255,255,0.03);z-index:30}
-.header-inner{display:flex;align-items:center;justify-content:space-between;}
-.brand{display:flex;gap:14px;align-items:center}
-.logo{width:56px;height:56px;border-radius:8px;object-fit:cover;box-shadow:0 6px 20px rgba(0,0,0,0.6)}
-.brand h1{margin:0;font-size:18px;color:#fff}
-.brand .tagline{margin:0;font-size:12px;color:var(--muted)}
-.nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-size:14px}
-.nav .cta{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--accent)}
-.worldcoin img{width:36px;height:36px;margin-left:12px;filter:drop-shadow(0 4px 10px rgba(6,200,220,0.12));}
-
-/* Hero */
-.hero{padding:48px 0}
-.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:stretch}
-.hero-copy h2.neon{font-size:56px;margin:0;color:var(--neon);text-shadow:0 0 22px rgba(29,231,255,0.15), 0 0 8px rgba(29,231,255,0.08)}
-.sub{font-size:22px;color:#cfefff;margin-top:6px;margin-bottom:12px}
-.lead{color:var(--muted);font-size:16px}
-.hero-cta{margin:18px 0}
-.btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted);cursor:pointer;text-decoration:none;display:inline-block}
-.btn.primary{background:linear-gradient(90deg,var(--accent),#39c79a);color:#042018;border:none;box-shadow:0 8px 30px rgba(6,200,220,0.08)}
-.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-.btn.small{padding:6px 8px;font-size:13px}
-
-/* Panel derecho */
-.hero-panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
-.panel-header .chip{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--accent)}
-.wallet-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
-.mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace}
-.balances{display:flex;gap:8px;margin-top:12px}
-.balance{background:var(--glass);padding:8px;border-radius:10px;min-width:96px;text-align:center}
-.balance .token{font-weight:700;color:#fff}
-.panel-footer{margin-top:12px;font-size:12px}
-
-/* Secciones */
-.section{padding:42px 0}
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
-.card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-.card h4{margin:0;color:#fff}
-.tags{margin-top:12px}
-
-/* Callout y footer */
-.callout{background:linear-gradient(90deg,#06202a, #05313a);color:#cfeee0;padding:28px;border-radius:14px;margin-top:24px;text-align:center}
-.site-footer{padding:18px;border-top:1px solid rgba(255,255,255,0.03);margin-top:28px;color:var(--muted)}
-
-/* Responsive */
-@media (max-width:900px){
-  .hero-grid{grid-template-columns:1fr}
-  .header-inner{flex-direction:column;align-items:flex-start;gap:12px}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(3px);}
+  to {opacity: 1; transform: translateY(0);}
 }
