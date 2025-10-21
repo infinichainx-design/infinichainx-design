@@ -9,16 +9,12 @@
   <link rel="icon" href="assets/logo-hood.png" />
 </head>
 <body>
-  <!-- Canvas con efecto de estrellas -->
   <canvas id="starfield" aria-hidden="true"></canvas>
-
-  <!-- Imagen de fondo (opcional/combinada con el canvas) -->
   <div class="bg-image" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <!-- logo encapuchado -->
         <img src="assets/logo-hood.png" alt="InfinichainX logo" class="logo" />
         <div>
           <h1>InfinichainX <span class="muted">IFX</span></h1>
@@ -31,8 +27,6 @@
         <a href="#tech">Tecnología</a>
         <a href="#simulator">Simulador</a>
         <a class="cta" href="#explore">Explorar</a>
-
-        <!-- Logo Worldcoin -->
         <div class="worldcoin" title="Worldcoin">
           <img src="assets/worldcoin.png" alt="Worldcoin logo" />
         </div>
@@ -67,23 +61,26 @@
                 <small>Wallet (simulado)</small>
                 <div id="wallet-address" class="mono">0xSIMULATED...IFX</div>
               </div>
-              <button id="reset-wallet" class="btn small">Reset</button>
+              <button id="resetWallet" class="btn small">Reset</button>
             </div>
+
             <div class="balances">
-              <div class="balance">
+              <div class="balance" data-token="IFX">
                 <div class="token">IFX</div>
-                <div id="bal-ifx" class="amount mono">10000</div>
+                <div class="amount mono">10000</div>
               </div>
-              <div class="balance">
+              <div class="balance" data-token="WORLD">
                 <div class="token">WORLD</div>
-                <div id="bal-world" class="amount mono">5000</div>
+                <div class="amount mono">5000</div>
               </div>
-              <div class="balance">
+              <div class="balance" data-token="USD">
                 <div class="token">USD</div>
-                <div id="bal-usd" class="amount mono">20000</div>
+                <div class="amount mono">20000</div>
               </div>
             </div>
           </div>
+
+          <div class="panel-console" id="console"></div>
 
           <div class="panel-footer">
             <small class="muted">Demo local — no requiere blockchain real. Datos estimados para prototipado.</small>
@@ -92,32 +89,14 @@
       </div>
     </section>
 
-    <!-- Secciones resumidas (puedes mantener tu contenido/simulador previo) -->
     <section id="ecosystem" class="section container">
       <h3>Apps en desarrollo</h3>
       <div class="cards-grid">
-        <article class="card">
-          <h4>Color Swap</h4>
-          <p>Intercambio descentralizado con privacidad ZK y AMM innovador.</p>
-        </article>
-        <article class="card">
-          <h4>Lending Protocol</h4>
-          <p>Préstamos sobrecolateralizados y cross-chain.</p>
-        </article>
-        <article class="card">
-          <h4>Financial Mini-Games</h4>
-          <p>Gamified DeFi para educación y yield.</p>
-        </article>
-        <article class="card">
-          <h4>Reputation System</h4>
-          <p>Identidad on-chain y onboarding viral.</p>
-        </article>
+        <article class="card"><h4>Color Swap</h4><p>Intercambio descentralizado con privacidad ZK y AMM innovador.</p></article>
+        <article class="card"><h4>Lending Protocol</h4><p>Préstamos sobrecolateralizados y cross-chain.</p></article>
+        <article class="card"><h4>Financial Mini-Games</h4><p>Gamified DeFi para educación y yield.</p></article>
+        <article class="card"><h4>Reputation System</h4><p>Identidad on-chain y onboarding viral.</p></article>
       </div>
-    </section>
-
-    <section id="simulator" class="section container">
-      <h3>Simulador interactivo</h3>
-      <p class="muted">Incluye swap AMM, lending y reputación (demo local). Usa el panel para probar acciones.</p>
     </section>
 
     <section id="explore" class="section callout">
