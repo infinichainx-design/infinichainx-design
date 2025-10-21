@@ -9,9 +9,9 @@ let height = window.innerHeight;
 canvas.width = width;
 canvas.height = height;
 
-const STAR_COLOR = "rgba(29,231,255,0.8)"; // mismo azul neón IFX
-const STAR_COUNT = 600; // cantidad de partículas
-const SPEED = 0.12; // velocidad base
+const STAR_COLOR = "rgba(29,231,255,0.8)";
+const STAR_COUNT = 700;
+const SPEED = 0.15;
 
 function initStars() {
   stars = [];
@@ -32,16 +32,15 @@ function moveStars() {
 }
 
 function drawStars() {
-  ctx.fillStyle = "rgba(2,4,10,0.4)";
+  ctx.fillStyle = "rgba(2,4,10,0.35)";
   ctx.fillRect(0, 0, width, height);
 
   for (let s of stars) {
     const k = 128.0 / s.z;
     const px = s.x * k + width / 2;
     const py = s.y * k + height / 2;
-
     if (px >= 0 && px <= width && py >= 0 && py <= height) {
-      const size = (1 - s.z / width) * 3.5;
+      const size = (1 - s.z / width) * 3.2;
       ctx.beginPath();
       ctx.fillStyle = STAR_COLOR;
       ctx.arc(px, py, size, 0, Math.PI * 2);
@@ -67,4 +66,3 @@ function resize() {
 window.addEventListener("resize", resize);
 initStars();
 animation();
-
