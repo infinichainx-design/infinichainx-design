@@ -1,44 +1,49 @@
 ```markdown
-# InfinichainX — Landing + Starfield + Simulador (Demo profesional)
+# InfinichainX — Landing + Starfield + Professional Simulator (IFX)
 
-Estructura recomendada del repo:
+Repository structure (recommended):
 - assets/
-  - logo-hood.png        <-- tu imagen "encapuchado" (usa la imagen del hood)
-  - bg.jpg               <-- imagen de fondo (screenshot con líneas/gradiente)
-  - worldcoin.png        <-- logo Worldcoin
-  - favicon.ico (opcional)
+  - logo-hood.png        <-- hood logo (keep your file)
+  - bg.jpg               <-- background image used beneath starfield
+  - favicon.ico (optional)
 - index.html
 - styles.css
 - starfield.js
 - app.js
 - README.md
 
-Resumen de los archivos:
-- index.html: Estructura completa del sitio con secciones y elementos de simulador.
-- styles.css: Estilos profesionales, responsive y efectos neon/vidrio.
-- starfield.js: Animación de estrellas que se acercan (warp), funciona en canvas.
-- app.js: Simulación realista en memoria: oráculo (random-walk), AMM (slippage y fees), lending con interés acumulado, historial de TXs simuladas, reputación y logs.
-- assets/: Coloca las imágenes con los nombres exactos.
+Quick summary:
+- UI language: English.
+- Token names used: IFX (project token) and WLD (chain/native token).
+- Sim features: simulated wallet connect, oracle (random-walk), AMM (constant-product) with slippage & fees, lending deposit with small bonus, tx history with simulated hashes, reputation system, and localStorage persistence for demo continuity.
 
-Cómo probar localmente:
-1. Crea la carpeta proyecto y copia los archivos y la carpeta `assets`.
-2. Abre `index.html` en tu navegador (Chrome/Edge/Firefox).
-3. Interactúa: actualiza montos, haz swaps, deposita colateral, observa el oráculo y el historial de transacciones.
+How to use locally:
+1. Place files and the `assets/` folder together in a project folder.
+2. Open `index.html` with a modern browser (Chrome, Edge, Firefox).
+3. Click "Connect (sim)" to simulate a wallet and test swaps/lending. State persists in localStorage.
 
-Despliegue en GitHub Pages (opción simple):
-1. Crea un repositorio en GitHub.
-2. Haz `git init`, `git add .`, `git commit -m "Initial demo"`.
-3. `git branch -M main`
-4. `git remote add origin https://github.com/<tu-usuario>/<tu-repo>.git`
-5. `git push -u origin main`
-6. En GitHub -> Settings -> Pages -> Source: branch = main, folder = / (o /docs si prefieres).
-7. Espera unos minutos y la web estará disponible en `https://<tu-usuario>.github.io/<tu-repo>/`.
+Deploy to GitHub Pages:
+Option A — main branch root:
+1. git init
+2. git add .
+3. git commit -m "Initial IFX demo"
+4. git branch -M main
+5. git remote add origin https://github.com/<your-username>/<your-repo>.git
+6. git push -u origin main
+7. In GitHub -> Settings -> Pages: Source = main / root. Save and wait a few minutes.
 
-Recomendaciones antes de publicar:
-- Optimiza imágenes (webp/jpg comprimido).
-- Verifica nombres exactos y case-sensitive (assets/logo-hood.png).
-- Si quieres dominio personalizado, configura CNAME en GitHub Pages.
+Option B — docs folder:
+1. Move files into `docs/` folder or set up your build to output there.
+2. Push to main.
+3. In GitHub -> Settings -> Pages: Source = main / /docs. Save.
 
-Licencias y assets:
-- Asegúrate de tener derecho a usar las imágenes y logos que subes.
+Notes and recommendations:
+- Verify `assets/bg.jpg` and `assets/logo-hood.png` file names are exact (case-sensitive).
+- Optimize images (WebP/JPEG compression) before public launch.
+- For real integration with Worldchain / Worldcoin:
+  - Replace simulated wallet with the real SDK (WalletConnect / native Worldchain wallet).
+  - Replace oracle simulation with an actual price feed (or mock aggregator in testnet).
+  - Add security/audit checks and hide any admin/test controls behind dev flags.
+- If you want, I can prepare a GitHub Actions workflow that deploys automatically to `gh-pages` branch.
+
 ```
